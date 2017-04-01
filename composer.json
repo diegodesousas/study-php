@@ -1,0 +1,21 @@
+{
+    "name": "diegodesousas/study",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Diego",
+            "email": "diegodesousas@yahoo.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Study\\": "src/"
+        }
+    }
+}
