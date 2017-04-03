@@ -5,21 +5,21 @@ namespace Study\Imposto;
 
 class ICMS implements IImposto
 {
-    private $ipi;
+    private $imposto;
 
     /**
      * ICMS constructor.
-     * @param IPI $ipi
+     * @param IImposto $imposto
      */
-    public function __construct(IPI $ipi = null)
+    public function __construct(IImposto $imposto = null)
     {
-        $this->ipi = $ipi;
+        $this->imposto = $imposto;
     }
 
     public function calcula(float $valor): float
     {
-        $ipi = empty($this->ipi) ? 0 : $this->ipi->calcula($valor);
+        $imposto = empty($this->imposto) ? 0 : $this->imposto->calcula($valor);
 
-        return $valor  * 0.03 + $ipi;
+        return $valor  * 0.03 + $imposto;
     }
 }
