@@ -3,7 +3,7 @@
 namespace Study\Imposto;
 
 
-class ICMS implements IImposto
+class ICMS extends AbstractImposto implements IImposto
 {
     private $imposto;
 
@@ -18,8 +18,6 @@ class ICMS implements IImposto
 
     public function calcula(float $valor): float
     {
-        $imposto = empty($this->imposto) ? 0 : $this->imposto->calcula($valor);
-
-        return $valor  * 0.03 + $imposto;
+        return $valor  * 0.03 + $this->handleCalcula($this->imposto, $valor);
     }
 }

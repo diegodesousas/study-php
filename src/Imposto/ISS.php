@@ -4,7 +4,7 @@
 namespace Study\Imposto;
 
 
-class ISS implements IImposto
+class ISS extends AbstractImposto implements IImposto
 {
     private $imposto;
 
@@ -23,8 +23,6 @@ class ISS implements IImposto
      */
     public function calcula(float $valor): float
     {
-        $imposto = empty($this->imposto) ? 0 : $this->imposto->calcula($valor);
-
-        return $valor  * 0.02 + $imposto;
+        return $valor  * 0.02 + $this->handleCalcula($this->imposto, $valor);
     }
 }

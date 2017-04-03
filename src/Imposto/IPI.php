@@ -2,7 +2,7 @@
 
 namespace Study\Imposto;
 
-class IPI implements IImposto
+class IPI extends AbstractImposto implements IImposto
 {
     private $imposto;
 
@@ -17,8 +17,6 @@ class IPI implements IImposto
 
     public function calcula(float $valor): float
     {
-        $imposto = empty($this->imposto) ? 0 : $this->imposto->calcula($valor);
-
-        return $valor * 0.05 + $imposto;
+        return $valor * 0.05 + $this->handleCalcula($this->imposto, $valor);
     }
 }
