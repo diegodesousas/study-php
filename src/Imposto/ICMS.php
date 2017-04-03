@@ -2,9 +2,9 @@
 
 namespace Study\Imposto;
 
-class ICMS implements IImposto
+class ICMS extends AbstractImposto
 {
-    public function calcula(float $valor): float
+    protected function novoCalcula(float $valor) : float
     {
         return $valor  * 0.03;
     }
