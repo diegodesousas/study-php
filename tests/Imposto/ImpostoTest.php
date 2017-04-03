@@ -2,6 +2,8 @@
 
 use PHPUnit\Framework\TestCase;
 use Study\Imposto\Calculador;
+use Study\Imposto\ICMS;
+use Study\Imposto\IPI;
 
 class ImpostoTest extends TestCase
 {
