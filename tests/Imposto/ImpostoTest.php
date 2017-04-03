@@ -28,4 +28,15 @@ class ImpostoTest extends TestCase
 
         $this->assertEquals(1.5, $valorDoICMS);
     }
+
+    public function testDeveCalcularICMSComIPI()
+    {
+        $calculador = new Calculador(50.0);
+
+        // Deve calcular o valor do imposto IPI
+        // O valor do IPI é de 3% sobre o valor da venda
+        $valorDoICMS = $calculador->valorDe(new ICMS(new IPI()));
+
+        $this->assertEquals(4.0, $valorDoICMS);
+    }
 }
